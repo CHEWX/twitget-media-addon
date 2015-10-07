@@ -3,7 +3,7 @@
         Plugin Name: Twitget Media Add on
         Plugin URI: http://www.admirecreative.co.uk
         Description: Adds Twitget Twitter feed image media as seperate widget
-        Version: 1.0
+        Version: 1.0.1
         Author: Tom Hopcraft
         Author URI: http://www.chewx.co.uk
         License: GNU General Public License v2.0
@@ -32,7 +32,7 @@
              */
             parent::__construct(
                 'admire_twitget_media', // Base ID
-                __( 'Twitget Media', 'admire' ), // Name
+                __( 'Twitget Media', self::name ), // Name
                 array( 'description' => __( 'Display your recent tweet images.', self::name ), ) // Args
             );
 
@@ -107,7 +107,8 @@
             if($image_url) {
                 return $image_url . ':large';
             } else {
-                return 'http://admire.agency/placeholder.jpg';
+                return false;
+                //return 'http://admire.agency/placeholder.jpg';
             }
 
         }
